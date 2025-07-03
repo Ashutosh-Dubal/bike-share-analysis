@@ -12,10 +12,12 @@ def load_all_csvs(raw_path):
     dataframes = []
     for file in all_files:
         file_path = os.path.join(raw_path, file)
-        print(f"📄 Loading {file_path}")
+        print(f"Loading {file_path}")
         try:
-            df = pd.read_csv(file_path, encoding="utf-8-sig", na_values=["NULL"])
-            # df['source_file'] = file  # Optional: tag source file
+            df = pd.read_csv(file_path, encoding="ISO-8859-1", na_values=["NULL"])
+            df.columns = df.columns.str.strip().str.lower().str.replace('ï»¿', '').str.replace(' ', '_')
+            if df.columns.tolist().count('trip_id') > 1:
+                df = df.drop(columns=['trip_id'], axis=1)
             dataframes.append(df)
         except Exception as e:
             print(f" Failed to read {file_path}: {e}")
@@ -26,10 +28,10 @@ def load_all_csvs(raw_path):
 def save_combined_csv(df, output_path):
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     df.to_csv(output_path, index=False)
-    print(f"✅ Saved combined CSV to: {output_path}")
+    print(f"Saved combined CSV to: {output_path}")
 
 if __name__ == "__main__":
-    print("🚴 Combining monthly CSVs into one DataFrame...")
+    print("Combining monthly CSVs into one DataFrame...")
     df = load_all_csvs(RAW_DATA_PATH)
-    print(f"🔢 Combined DataFrame shape: {df.shape}")
+    print(f"Combined DataFrame shape: {df.shape}")
     save_combined_csv(df, OUTPUT_FILE)
