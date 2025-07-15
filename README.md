@@ -91,6 +91,22 @@ As a result:
 	• Insights beyond July reflect only Casual Member usage and should be interpreted accordingly.
 
 This gap was retained intentionally to preserve dataset integrity and highlight real-world challenges analysts face when working with open data.
+---
+
+## 👁 Key Insights & Analysis
+
+### Location-Based Usage Patterns: Downtown vs. Suburban Analysis
+
+📄 Summary Write-up (you can use this directly):
+
+The bike share system in Toronto exhibits a strong downtown-centric usage pattern. As shown in the summary below, over 99% of all ride activity occurs within stations classified as “Downtown.” Suburban stations, while present in areas like North York, Scarborough, and Etobicoke, account for less than 0.3% of total activity.
+
+| **Location Type** | **Starts**  | **Ends**  | **Total Activity**|
+| ----------------- | ----------- | --------- | ----------------- |
+| Downtown          | 5,099,883   | 5,098,005 | 10,197,888        |
+| Suburban          | 15,752      | 14,169    | 29,921            |
+
+This pattern suggests that the bike share system is heavily optimized for short-distance, urban commutes and errands. The balance of starts and ends downtown indicates strong local circulation. In contrast, suburban stations may serve longer, more directional commutes and might benefit from better integration with transit or more station density.
 
 ---
 ## 📁 Project Structure

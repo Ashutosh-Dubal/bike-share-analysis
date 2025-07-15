@@ -1,6 +1,10 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
+
+save_folder = "visuals/station_imbalance"
+os.makedirs(save_folder, exist_ok=True)
 
 # Load the cleaned combined CSV
 DATA_PATH = "data/processed/bikeshare_2023_combined.csv"
@@ -30,7 +34,7 @@ plt.title("Top 10 Stations: More Trips Started Than Ended (Exporters)")
 plt.xlabel("Net Flow (Starts - Ends)")
 plt.ylabel("Station Name")
 plt.tight_layout()
-plt.savefig("visuals/top_station_exporters.png")
+plt.savefig(os.path.join(save_folder, "top_station_exporters.png"))
 plt.clf()
 
 # Importers
@@ -40,5 +44,7 @@ plt.title("Top 10 Stations: More Trips Ended Than Started (Importers)")
 plt.xlabel("Net Flow (Starts - Ends)")
 plt.ylabel("Station Name")
 plt.tight_layout()
-plt.savefig("visuals/top_station_importers.png")
+plt.savefig(os.path.join(save_folder, "top_station_importers.png"))
 plt.clf()
+
+print("Station imbalance plots are saved to visuals folder")

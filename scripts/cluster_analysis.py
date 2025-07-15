@@ -1,10 +1,14 @@
 import pandas as pd
 import folium
+import os
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 from branca.element import MacroElement, Template
+
+save_folder="visuals/cluster"
+os.makedirs(save_folder, exist_ok=True)
 
 # Setup for prettier plot
 sns.set(style="whitegrid")
@@ -13,7 +17,7 @@ plt.rcParams["figure.figsize"] = (10, 6)
 # Load data
 df_original = pd.read_csv("data/processed/stations_with_coords_clean.csv")
 
-# Pastel-friendly color palette (can extend if needed)
+# Pastel-friendly color palette
 colors = ['#FF9999', '#99CCFF', '#99FF99', '#FFCC99', '#CC99FF', '#FFFF99', '#66CCCC', '#FFB6C1', '#C0C0C0', '#CCE5FF', '#FFDAB9', '#E6E6FA']
 
 # Container to store cluster assignments
@@ -86,12 +90,13 @@ for k in K:
     m.get_root().add_child(macro)
 
     # Save the map
-    m.save(f"visuals/clusters_k{k}_styled.html")
-    print(f"Saved: visuals/clusters_k{k}_styled.html")
+    m.save(os.path.join(save_folder, f"clusters_k{k}_styled.html"))
+    print(f"Saved: visuals/cluster/clusters_k{k}_styled.html")
 
 # Export all assignments
-all_clusters_df.to_csv("data/processed/station_clusters_all_k.csv", index=False)
-print("Cluster assignments saved: data/processed/station_clusters_all_k.csv")
+os.makedirs("data/processed/cluster", exist_ok=True)
+all_clusters_df.to_csv("data/processed/cluster/station_clusters_all_k.csv", index=False)
+print("Cluster assignments saved: data/processed/cluster/station_clusters_all_k.csv")
 
 # Plotting Inertias values
 plt.plot(K, inertias, 'o-', color='orange')
@@ -99,9 +104,8 @@ plt.xlabel('Number of Clusters (k)')
 plt.ylabel('Inertias')
 plt.title('The Elbow Method using Inertias')
 plt.tight_layout()
-plt.savefig("visuals/elbow_method_using_inertias.png")
+plt.savefig(os.path.join(save_folder, "elbow_method_using_inertias.png"))
 plt.clf()
-print("Saved visuals/elbow_method_using_inertias.png")
 
 # Plotting Silhouette Score Plot
 plt.plot(K, silhouette_scores, 'o-', color='green')
@@ -109,6 +113,7 @@ plt.xlabel('Number of Clusters (k)')
 plt.ylabel('Silhouette Score')
 plt.title('Silhouette Score vs K')
 plt.tight_layout()
-plt.savefig("visuals/silhouette_score.png")
+plt.savefig(os.path.join(save_folder, "silhouette_score.png"))
 plt.clf()
-print("Saved visuals/silhouette_score.png")
+
+print("Cluster plots are saved to visuals folder")
