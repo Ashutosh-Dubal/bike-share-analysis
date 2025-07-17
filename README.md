@@ -105,6 +105,7 @@ Real-world datasets aren’t perfect, and this one was no exception:
 - Rather than dropping those months, I retained them to keep the full context of the system’s usage and used explicit caveats throughout the analysis.
 
 This project reflects a key lesson in balancing data integrity with storytelling — sometimes it’s more valuable to highlight limitations than to force completeness.
+
 ---
 
 ## 🛠️ How to Install and Run the Project
