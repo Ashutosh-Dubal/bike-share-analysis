@@ -19,9 +19,9 @@ Our findings highlight key usage patterns across neighborhoods, reveal imbalance
 ## 📚 Table of Contents
 1. [Dataset Description](https://github.com/Ashutosh-Dubal/bike-share-analysis/tree/main?tab=readme-ov-file#-dataset-description)
 2. [Challenges & Learnings](https://github.com/Ashutosh-Dubal/bike-share-analysis/tree/main?tab=readme-ov-file#-challenges--learnings)
-3. [How to Install and Run the Project]()
-4. [How to Use the Project]()
-5. [Sample Output]()
+3. [How to Install and Run the Project](https://github.com/Ashutosh-Dubal/bike-share-analysis?tab=readme-ov-file#%EF%B8%8F-how-to-install-and-run-the-project)
+4. [How to Use the Project](https://github.com/Ashutosh-Dubal/bike-share-analysis?tab=readme-ov-file#-how-to-use-this-project)
+5. [Sample Output](https://github.com/Ashutosh-Dubal/bike-share-analysis?tab=readme-ov-file#-sample-output)
 6. [Key Insights & Analysis](https://github.com/Ashutosh-Dubal/bike-share-analysis/tree/main?tab=readme-ov-file#-key-insights--analysis)
 7. [Tech Stack](https://github.com/Ashutosh-Dubal/bike-share-analysis/tree/main?tab=readme-ov-file#-tech-stack)
 8. [Project Structure](https://github.com/Ashutosh-Dubal/bike-share-analysis/tree/main?tab=readme-ov-file#-project-structure)
@@ -34,7 +34,7 @@ Our findings highlight key usage patterns across neighborhoods, reveal imbalance
 
 This project uses open data from the City of Toronto Open Data Portal, focusing on Bike Share Toronto ridership data for the year 2023.
 
-The dataset includes over 800,000 anonymized trip records, each representing a single ride within the city’s bike share system.
+The dataset includes over ~5,000,000 anonymized trip records, each representing a single ride within the city’s bike share system.
 
 ### ✅ Key Features Collected:
 
