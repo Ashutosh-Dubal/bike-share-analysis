@@ -3,7 +3,7 @@ import requests
 import time
 
 RAW_DATA_PATH = "data/processedbikeshare_2023_combined.csv"
-GEO_OUTPUT_PATH = "data/processed/stations_with_coords.csv"
+GEO_OUTPUT_PATH = "data/raw/stations_with_coords.csv"
 CLEAN_OUTPUT_PATH = "data/processed/stations_with_coords_clean.csv"
 USER_AGENT = "Toronto-Bike-Project"
 

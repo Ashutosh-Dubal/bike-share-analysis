@@ -15,7 +15,7 @@ sns.set(style="whitegrid")
 plt.rcParams["figure.figsize"] = (10, 6)
 
 # Load data
-df_original = pd.read_csv("data/processed/stations_with_coords_clean.csv")
+df_original = pd.read_csv("data/stations_with_coords_clean.csv")
 
 # Pastel-friendly color palette
 colors = ['#FF9999', '#99CCFF', '#99FF99', '#FFCC99', '#CC99FF', '#FFFF99', '#66CCCC', '#FFB6C1', '#C0C0C0', '#CCE5FF', '#FFDAB9', '#E6E6FA']
@@ -94,9 +94,9 @@ for k in K:
     print(f"Saved: visuals/cluster/clusters_k{k}_styled.html")
 
 # Export all assignments
-os.makedirs("data/processed/cluster", exist_ok=True)
-all_clusters_df.to_csv("data/processed/cluster/station_clusters_all_k.csv", index=False)
-print("Cluster assignments saved: data/processed/cluster/station_clusters_all_k.csv")
+os.makedirs("data/cluster", exist_ok=True)
+all_clusters_df.to_csv("data/cluster/station_clusters_all_k.csv", index=False)
+print("Cluster assignments saved: data/cluster/station_clusters_all_k.csv")
 
 # Plotting Inertias values
 plt.plot(K, inertias, 'o-', color='orange')

@@ -11,7 +11,7 @@ os.makedirs(save_folder, exist_ok=True)
 
 # Load trip data and station location data
 trips = pd.read_csv("data/processed/bikeshare_2023_combined.csv")
-stations = pd.read_csv("data/processed/stations_with_coords_clean.csv")
+stations = pd.read_csv("data/stations_with_coords_clean.csv")
 
 # Normalize station names
 trips["start_station_name"] = trips["start_station_name"].str.strip().str.lower()
@@ -80,8 +80,6 @@ colormap.add_to(m2)
 
 m2.save(os.path.join(save_folder, "net_flow_map.html"))
 print("Heatmap saved: visuals/net_flow_map.html")
-
-print(station_balance["normalized_flow"].min(), station_balance["normalized_flow"].max())
 
 def classify_location_type(name):
     name = name.lower()
