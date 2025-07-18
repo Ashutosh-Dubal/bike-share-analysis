@@ -51,6 +51,16 @@ The dataset includes over ~5,000,000 anonymized trip records, each representing 
 | Bike ID                       | Unique ID of the bike used                                  |
 | User type                     | Either Casual Member or Annual Member                       |
 
+> **Note on Data Files and Coordinates**
+>
+>The file station_with_coordinates_clean.csv in the data/ directory contains manually updated station information with accurate latitude and longitude values. This file is essential for running the clustering (cluster_analysis.py) and mapping (spatial_usage.py) scripts. It is not generated programmatically and has been curated to ensure precise spatial analysis.
+> 
+>Additionally, precomputed clustering results (cluster_output_k_4.csv to cluster_output_k_12.csv) are stored in the data/cluster/ folder to support immediate visualization without rerunning the full KMeans pipeline.
+>
+>**Why data/raw/ and data/processed/ are excluded:**
+>
+>To keep the repository lightweight, the full raw and intermediate processed datasets (which total over 1.6 GB) are not included in version control. Instead, the cleaned coordinate file and clustering outputs are provided so users can still run and explore the core analysis and visualizations efficiently.
+
 ---
 
 ## 🧠 Challenges & Learnings
